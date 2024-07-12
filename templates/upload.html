@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pneumonia Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
+    <style>
+        body {
+            justify-content: center;
+            height: 100vh; 
+            background-color: #f4f4f4;
+        }
+        
+        .buttons{
+            justify-content: center;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px; 
+            font-size: 16px; 
+            color: white; 
+            background-color: #007bff; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #0056b3; 
+            transform: scale(1.05); 
+        }
+        
+        .button:active {
+            transform: scale(0.95); 
+        }
+        .github-icon {
+            text-align: center;
+            margin-top: 40px;
+            margin-right: 0.
+        }
+
+        .github-icon a {
+            text-decoration: none;
+            color: #333;
+            font-size: 40px;
+            transition: color 0.3s;
+        }
+
+        .github-icon a:hover {
+            color: #4078c0;
+        }
+
+        .github-icon img{
+            text-align: center;
+            width: 120px;
+            margin-top: 40px;
+            margin-right: 0.
+        }
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; 
+            color: #333; 
+            text-align: center;
+            margin-top: 20px; 
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #333; 
+            text-align: center; 
+            margin-top: 20px; 
+        }
+        
+        h3 {
+    
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #333; 
+            text-align: center; 
+            margin-top: 20px; 
+            margin-right: 500px;
+        }
+        .result{
+            justify-content: center;
+            display: flex;
+        }
+</style>
+  </head>
+  <body>
+    <h1>Upload your image here</h1>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        <div class = "buttons">
+            <input type="file" name="file" class = 'button'>
+            <input type="submit" value="submit" class = 'button'>
+        </div>
+        
+        {% if prediction %}
+        <h2>Prediction Result: {{ prediction }}</h2>
+        <h3>Uploaded Image:</h3>
+        <div class = 'result'>
+        <img src="{{ image_path }}" alt="Your image" style="display: flex; max-width: 400px; height: auto; justify-content: center;">
+        </div>
+    {% endif %}
+
+        <div class = 'github-icon'>    
+            <a href = "https://github.com/jonyxnx" target="_blank">  <i class="fab fa-github"></i> </a>
+            <a href = 'https://www.linkedin.com/in/jonathanguevara123/' target = '_blank'>  <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn"> </a>
+        </div>
+    </form>
+  </body>
+</html>
